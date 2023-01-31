@@ -9,15 +9,13 @@ pool:
   name: Default
   
 variables:
-  rgname: "yamlrg"
+  rgname: "yamlrg1"
   loc: "westus"
 
 steps:
 - task: AzurePowerShell@5
-  displayName: Az powershell yaml
   inputs:
     azureSubscription: 'azure connection'
-    ScriptType: 'InlineScript'
-    Inline: |
-     new-azresourcegroup -name $(rgname) -location $(loc)
+    ScriptType: 'FilePath'
+    ScriptPath: 'test.ps1'
     azurePowerShellVersion: 'LatestVersion'
