@@ -1,1 +1,1 @@
-new-azresourcegroup -name $(rgname) -location $(loc)
+new-azresourcegroup -name $env:rgname -location $env:loc
